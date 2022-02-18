@@ -1,19 +1,12 @@
 const Table = require('./src/table');
 const Robot = require('./src/robot');
 const fs = require('fs');
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-})
 
 let table = new Table();
 let robot = new Robot();
+let fileName = `./testData/test1.txt`;
 
-readline.question(`Which test file do you want to run? Please input test1/test2/test3/test4\n`, file => {
-  let fileName = `./testData/${file}.txt`;
-  getData(fileName);
-  readline.close()
-})
+getData(fileName);
 
 function getData(fileName) {
   let cmds = fs.readFileSync(fileName, 'utf8').split('\n');
