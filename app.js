@@ -8,11 +8,10 @@ let fileName = './testData/test1.txt';
 
 getData(fileName);
 
-function getData (fileName) {
+function getData(fileName) {
   let cmds = fs.readFileSync(fileName, 'utf8').split('\n');
   processData(cmds);
 }
-
 
 function processData(cmds) {
   let data = cmds.map(x => x.toUpperCase().trim());
@@ -24,7 +23,7 @@ function processData(cmds) {
   } else {
     return;
   }
- 
+
   // run the rest of cmds
   for (let i = 1; i < data.length; i++) {
     switch (data[i]) {
