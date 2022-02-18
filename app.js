@@ -1,14 +1,18 @@
 const Table = require('./src/table');
 const Robot = require('./src/robot');
 const fs = require('fs');
-const { resolveObjectURL } = require('buffer');
 
 let table = new Table();
 let robot = new Robot();
-let fileName = './testData/test3.txt';
+let fileName = './testData/test1.txt';
 
-const cmds = fs.readFileSync(fileName, 'utf8').split('\n');
-processData(cmds);
+getData(fileName);
+
+function getData (fileName) {
+  let cmds = fs.readFileSync(fileName, 'utf8').split('\n');
+  processData(cmds);
+}
+
 
 function processData(cmds) {
   let data = cmds.map(x => x.toUpperCase().trim());
