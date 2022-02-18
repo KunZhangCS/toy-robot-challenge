@@ -42,7 +42,7 @@ class Robot {
     };
 
     report() {
-        if (this.xPos !== "undefined") console.log(`${this.xPos}, ${this.yPos}, ${this.direction}`);
+        if (this.xPos !== undefined) console.log(`${this.xPos}, ${this.yPos}, ${this.direction}`);
     }
 }
 
