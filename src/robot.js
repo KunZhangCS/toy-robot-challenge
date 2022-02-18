@@ -1,13 +1,13 @@
 class Robot {
-    constructor(xPos, yPos, direction, xTable, yTable) {
+    directions = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
+
+    place(xPos, yPos, direction, xTable, yTable) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.direction = direction;
         this.xTable = xTable;
         this.yTable = yTable;
     }
-
-    directions = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
 
     move() {
         switch (this.direction) {
@@ -42,7 +42,7 @@ class Robot {
     };
 
     report() {
-        console.log(`${this.xPos}, ${this.yPos}, ${this.direction}`);
+        if (this.xPos !== "undefined") console.log(`${this.xPos}, ${this.yPos}, ${this.direction}`);
     }
 }
 

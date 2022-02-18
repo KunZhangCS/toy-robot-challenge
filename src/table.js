@@ -3,10 +3,6 @@ class Table {
         this.xAxis = xAxis;
         this.yAxis = yAxis;
     }
-
-    isOnTable(x, y) {
-        return x <= this.xAxis && y <= this.yAxis;
-    }
 }
 
 module.exports = Table;
